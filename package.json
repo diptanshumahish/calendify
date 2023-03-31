@@ -1,11 +1,24 @@
 {
   "name": "calendify",
   "version": "1.0.0",
-  "description": "This package makes it easier to implement dynamic calendars for your websites, It returns an array of Objects containing dates, days and a field for setting notes for a particular date. Just provide in the date, month and Year and you are good to go ",
+  "description": "This package makes it easier to implement dynamic calendars for your websites, It returns an array of Objects containing dates, days and a field for setting notes for a particular date. Just provide in the date, month and Year and you are good to go",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diptanshumahish/calendify.git"
+  },
+  "keywords": [
+    "calendify",
+    "diptanshumahish",
+    "calendar"
+  ],
   "author": "diptanshumahish",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diptanshumahish/calendify/issues"
+  },
+  "homepage": "https://github.com/diptanshumahish/calendify#readme"
 }
