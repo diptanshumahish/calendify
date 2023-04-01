@@ -1,10 +1,9 @@
 
-
 class Calendify {
     //get current data
     static current = Calendify.getCurrenStatus();
-
-    static returnCalendar(month, year) {
+    //get calendar
+    static getCalendar(month, year) {
         //Months here to get from the index returned from the current input.
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -16,8 +15,6 @@ class Calendify {
             "today": this.current.day,
             "day": days[this.current.date]
         };
-
-
         //checking data types and range in case of data entered.
         if (typeof (month) != "number" && month != undefined) {
             console.error("Month must be an integer, For example for January use '0' as a parameter and '11' for December");
@@ -61,19 +58,17 @@ class Calendify {
             ret.month = months[month];
         }
         for (let i = firstDayOfMonth; i > 0; i--) {
-            ret.days.push(lastDayOfLastMonth - i + 1);
+            ret.days.push({ "date": lastDayOfLastMonth - i + 1, "type": "previousMonth" });
 
         }
         for (let i = 1; i < lastDayOfTheMonth + 1; i++) {
-            ret.days.push(i);
+            ret.days.push({ "date": lastDayOfLastMonth - i + 1, "type": "activeMonth" });
         }
         for (let i = lastDay; i < 6; i++) {
-            ret.days.push(i - lastDay + 1);
+            ret.days.push({ "date": i - lastDay + 1, "type": "nextMonth" });
 
         }
-
-        // return ret;
-        console.log(ret)
+        return ret;
 
     }
 
@@ -100,10 +95,10 @@ class Calendify {
             this.current.month--;
             currentYear = this.current.year;
             currentmonth = this.current.month;
-            // console.log(this.current.month)
+
         }
 
-        Calendify.returnCalendar(currentmonth, currentYear)
+        Calendify.getCalendar(currentmonth, currentYear)
     }
     static nextMonth() {
         var currentYear;
@@ -120,7 +115,7 @@ class Calendify {
 
         }
 
-        Calendify.returnCalendar(currentmonth, currentYear)
+        Calendify.getCalendar(currentmonth, currentYear)
     }
 
 }
