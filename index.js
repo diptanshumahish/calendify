@@ -62,7 +62,7 @@ class Calendify {
 
         }
         for (let i = 1; i < lastDayOfTheMonth + 1; i++) {
-            ret.days.push({ "date": lastDayOfLastMonth - i + 1, "type": "activeMonth" });
+            ret.days.push({ "date": i, "type": "activeMonth" });
         }
         for (let i = lastDay; i < 6; i++) {
             ret.days.push({ "date": i - lastDay + 1, "type": "nextMonth" });
@@ -98,7 +98,7 @@ class Calendify {
 
         }
 
-        Calendify.getCalendar(currentmonth, currentYear)
+        return Calendify.getCalendar(currentmonth, currentYear);
     }
     static nextMonth() {
         var currentYear;
@@ -115,7 +115,7 @@ class Calendify {
 
         }
 
-        Calendify.getCalendar(currentmonth, currentYear)
+        return Calendify.getCalendar(currentmonth, currentYear);
     }
 
 }

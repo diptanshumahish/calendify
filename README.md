@@ -131,6 +131,67 @@ This method populates the object with the previous month's data, though the pres
 This method populates the object with the next month's data, though the present day fields will remain same.
 
 
+### Sample data
+Here's what the package returns:
+```js
+{
+  month: 'April',
+  year: 2023,
+  days: [
+    { date: 26, type: 'previousMonth' },
+    { date: 27, type: 'previousMonth' },
+    { date: 28, type: 'previousMonth' },
+    { date: 29, type: 'previousMonth' },
+    { date: 30, type: 'previousMonth' },
+    { date: 31, type: 'previousMonth' },
+    { date: 1, type: 'activeMonth' },
+    { date: 2, type: 'activeMonth' },
+    { date: 3, type: 'activeMonth' },
+    { date: 4, type: 'activeMonth' },
+    { date: 5, type: 'activeMonth' },
+    { date: 6, type: 'activeMonth' },
+    { date: 7, type: 'activeMonth' },
+    { date: 8, type: 'activeMonth' },
+    { date: 9, type: 'activeMonth' },
+    { date: 10, type: 'activeMonth' },
+    { date: 11, type: 'activeMonth' },
+    { date: 12, type: 'activeMonth' },
+    { date: 13, type: 'activeMonth' },
+    { date: 14, type: 'activeMonth' },
+    { date: 15, type: 'activeMonth' },
+    { date: 16, type: 'activeMonth' },
+    { date: 17, type: 'activeMonth' },
+    { date: 18, type: 'activeMonth' },
+    { date: 19, type: 'activeMonth' },
+    { date: 20, type: 'activeMonth' },
+    { date: 21, type: 'activeMonth' },
+    { date: 22, type: 'activeMonth' },
+    { date: 23, type: 'activeMonth' },
+    { date: 24, type: 'activeMonth' },
+    { date: 25, type: 'activeMonth' },
+    { date: 26, type: 'activeMonth' },
+    { date: 27, type: 'activeMonth' },
+    { date: 28, type: 'activeMonth' },
+    { date: 29, type: 'activeMonth' },
+    { date: 30, type: 'activeMonth' },
+    { date: 1, type: 'nextMonth' },
+    { date: 2, type: 'nextMonth' },
+    { date: 3, type: 'nextMonth' },
+    { date: 4, type: 'nextMonth' },
+    { date: 5, type: 'nextMonth' },
+    { date: 6, type: 'nextMonth' }
+  ],
+  today: 2,
+  day: 'Sunday'
+}
+
+```
+
+## Release notes:
+Fixed a major bug:
+The active month outputs have been corrected.
+
+
 ## Upcoming
 Soon I'll be making this as a React Component that returns a Calendar with UI 😉
 
