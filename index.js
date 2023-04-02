@@ -69,7 +69,6 @@ class Calendify {
 
         }
         return ret;
-
     }
 
     //get current updates
@@ -87,7 +86,7 @@ class Calendify {
         var currentYear;
         var currentmonth;
         if (this.current.month == 0) {
-            this.current.month == 11;
+            this.current.month = 11;
             this.current.year--;
             currentYear = this.current.year;
             currentmonth = this.current.month;
@@ -104,7 +103,7 @@ class Calendify {
         var currentYear;
         var currentmonth;
         if (this.current.month == 11) {
-            this.current.month == 0;
+            this.current.month = 0;
             this.current.year++;
             currentYear = this.current.year;
             currentmonth = this.current.month;
@@ -116,6 +115,19 @@ class Calendify {
         }
 
         return Calendify.getCalendar(currentmonth, currentYear);
+    }
+    //returns string type for month and year as well
+    static getDate() {
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const temp = Calendify.getCurrenStatus();
+        return {
+            "day": days[temp.date],
+            "month": months[temp.month],
+            "year": temp.year,
+            "date": temp.day
+        }
+
     }
 
 }

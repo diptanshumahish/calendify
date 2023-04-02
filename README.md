@@ -187,6 +187,10 @@ Here's what the package returns:
 
 ```
 
+## Demo website 
+Check out the demo website ! **[calendify demo](https://calendify-demo.vercel.app/)**.
+
+
 ## Release notes:
 Fixed a major bug:
 The active month outputs have been corrected.
