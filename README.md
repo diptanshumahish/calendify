@@ -1,3 +1,6 @@
+![Calendify image](https://github.com/diptanshumahish/calendify-demo/raw/main/public/assets/banner.png)
+
+
 # calendify
 This package returns an object containing dates of the current month in a format of `SUN MON TUE WED THU FRI SAT`, it gives 42 dates including previous and next month dates and can be easiy arranged in 7(columns) X 6(rows) format using css.
 
