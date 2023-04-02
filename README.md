@@ -1,4 +1,4 @@
-![Calendify image](https://github.com/diptanshumahish/calendify-demo/raw/main/public/assets/banner.png)
+![Calendify image](https://calendify-demo.vercel.app/assets/banner.png)
 
 
 # calendify

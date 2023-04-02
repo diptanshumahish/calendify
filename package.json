@@ -1,6 +1,6 @@
 {
   "name": "calendify",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "This package makes it easier to implement dynamic calendars for your websites, It returns an array of Objects containing dates & days.",
   "main": "index.js",
   "scripts": {
