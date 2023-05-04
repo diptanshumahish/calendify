@@ -1,3 +1,8 @@
 import { ReturnCalendar } from "./index.d";
-declare const getCalendar: (month: number, year: number) => ReturnCalendar | null;
+interface Props {
+    month?: number;
+    year?: number;
+    startDateMonday?: boolean;
+}
+declare const getCalendar: ({ month, startDateMonday, year, }: Props) => ReturnCalendar;
 export default getCalendar;

@@ -1,9 +1,8 @@
 ![Calendify image](https://calendify-demo.vercel.app/assets/banner.png)
 
-
 # calendify
-This package returns an object containing dates of the current month in a format of `SUN MON TUE WED THU FRI SAT`, it gives 42 dates including previous and next month dates and can be easiy arranged in 7(columns) X 6(rows) format using css.
 
+This package returns an object containing dates of the current month in a format of `SUN MON TUE WED THU FRI SAT`, it gives 42 dates including previous and next month dates and can be easiy arranged in 7(columns) X 6(rows) format using css.
 
 ### Installation
 
@@ -12,12 +11,13 @@ $ npm install --save calendify
 $ yarn add calendify
 ```
 
+## Demo
 
-## Demo 
 Here's a mini demo on a basic implementation of this package
+
 ```jsx
   import React from 'react';
-  import Calendify from 'calendify';
+  import {getCalendar,prevMonth,nextMonth} from 'calendify';
   import {useEffect,useState} from 'react';
 
 
@@ -30,8 +30,7 @@ Here's a mini demo on a basic implementation of this package
 
 
     useEffect(()=>{
-            var temp = Calendify.getCalendar()
-
+            var temp = getCalendar()
             setDates(temp.days);
             setMonth(temp.month);
             setYear(temp.year);
@@ -43,13 +42,13 @@ Here's a mini demo on a basic implementation of this package
     return (
       <div>
         <div>
-            //Display month and year 
+            //Display month and year
             <div id="upperPart">
                 <div id="displayMonthAndYear">{month}{" "}{year}</div> // renders current month and current year
                 <div>
                     <div onclick={
                         ()=>{
-                            var temp = Calendify.prevMonth();
+                            var temp = prevMonth();
                                 setDates(temp.days);
                                 setMonth(temp.month);
                                 setYear(temp.year);
@@ -61,7 +60,7 @@ Here's a mini demo on a basic implementation of this package
                    }>Prev</div> // this method populates the fields with next month details
                     <div onclick={
                             ()=>{
-                            var temp = Calendify.nextMonth();
+                            var temp = nextMonth();
                                 setDates(temp.days);
                                 setMonth(temp.month);
                                 setYear(temp.year);
@@ -102,40 +101,55 @@ Here's a mini demo on a basic implementation of this package
                 </div>
             </div>
             <div id="showCurrent">
-                <div>Today is {date} and its a {today}</div> // renders current date and day today 
+                <div>Today is {date} and its a {today}</div> // renders current date and day today
             </div>
         </div>
       </div>
     );
   }
 ```
+
 ## Methods
 
 This package has two main methods :
 
 ### getCalendar
-``getCalendar()``:
+
+`getCalendar({})`:
 This method returns an Object with the following objects.✨
-*(optional: This method can accept a month and year as arguements as well, in case you need it.)*
+_(optional: This method can accept a month , year and starting day of week (Monday) as arguements as well, in case you need it.)_
+
 1. `month`: A string of the current month.
 2. `year`: A number of telling the current year.
 3. `days`: An array of objects containing the dates in the format `{date:(date here),type:(whether it's current or previous or next month)}` .
 4. `today`: A number telling the current day.
 5. `day`: A string of the current day in the week.
 
+# optional parameters
 
+```jsx
+getCalendar({ startDateMonday: true,month:01,year:2023 }); // can take in optional parameters as month, year as numbers and startDateMonday  as boolean, if you don't need any parameters leave it empty 
+getCalendar({})
+```
 
 ### prevMonth
-``prevMonth()``
+
+`prevMonth({})`
 This method populates the object with the previous month's data, though the present day fields will remain same.
 
+optional parameter : startDateMonday(boolean), this needd to be set true in case your calendar has a week starting from Monday, leave {} empty if your week starts from Sunday
+
 ### nextonth
-``nextMonth()``
+
+`nextMonth({})`
 This method populates the object with the next month's data, though the present day fields will remain same.
 
+optional parameter : startDateMonday(boolean), this needd to be set true in case your calendar has a week starting from Monday, leave {} empty if your week starts from Sunday
 
 ### Sample data
+
 Here's what the package returns:
+
 ```js
 {
   month: 'April',
@@ -190,21 +204,18 @@ Here's what the package returns:
 
 ```
 
-## Demo website 
+## Demo website
+
 Check out the demo website ! **[calendify demo](https://calendify-demo.vercel.app/)**.
 
-
 ## Release notes:
+
+[new] Added an optional parameter of "startDayMonday", incase someone needs their week to start from Monday, instead of SUnday
 Migrated to typescript
 Fixed a major bug:
 The active month outputs have been corrected.
 [new] ADDED ID NUMBERS.
 
-
 ## Upcoming
+
 Soon I'll be making this as a React Component that returns a Calendar with UI 😉
-
-
-
-
-

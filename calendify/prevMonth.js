@@ -5,7 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const currentVariable_1 = __importDefault(require("./currentVariable"));
 const getCalendar_1 = __importDefault(require("./getCalendar"));
-const prevMonth = () => {
+const prevMonth = ({ startDateMonday = false, }) => {
+    if (startDateMonday === undefined) {
+        startDateMonday = false;
+    }
     var currentYear;
     var currentmonth;
     if (currentVariable_1.default.month == 0) {
@@ -19,7 +22,11 @@ const prevMonth = () => {
         currentYear = currentVariable_1.default.year;
         currentmonth = currentVariable_1.default.month;
     }
-    return (0, getCalendar_1.default)(currentmonth, currentYear);
+    return (0, getCalendar_1.default)({
+        month: currentmonth,
+        startDateMonday: startDateMonday,
+        year: currentYear,
+    });
 };
 exports.default = prevMonth;
 //# sourceMappingURL=prevMonth.js.map

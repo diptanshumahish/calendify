@@ -1,3 +1,6 @@
 import { ReturnCalendar } from "./index.d";
-declare const nextMonth: () => ReturnCalendar | null;
+interface CheckWeekStart {
+    startDateMonday: boolean;
+}
+declare const nextMonth: ({ startDateMonday, }: CheckWeekStart) => ReturnCalendar;
 export default nextMonth;
