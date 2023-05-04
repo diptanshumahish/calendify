@@ -30,7 +30,7 @@ Here's a mini demo on a basic implementation of this package
 
 
     useEffect(()=>{
-            var temp = getCalendar()
+            var temp = getCalendar({})
             setDates(temp.days);
             setMonth(temp.month);
             setYear(temp.year);
@@ -48,7 +48,7 @@ Here's a mini demo on a basic implementation of this package
                 <div>
                     <div onclick={
                         ()=>{
-                            var temp = prevMonth();
+                            var temp = prevMonth({});
                                 setDates(temp.days);
                                 setMonth(temp.month);
                                 setYear(temp.year);
@@ -60,7 +60,7 @@ Here's a mini demo on a basic implementation of this package
                    }>Prev</div> // this method populates the fields with next month details
                     <div onclick={
                             ()=>{
-                            var temp = nextMonth();
+                            var temp = nextMonth({});
                                 setDates(temp.days);
                                 setMonth(temp.month);
                                 setYear(temp.year);
